@@ -1,0 +1,1345 @@
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> - TestReport</title>
+  <style>
+    body {
+      background-color: #f2f2f2;
+      color: #333;
+      margin: 0 auto;
+      width: 960px;
+    }
+    #summary {
+      width: 960px;
+      margin-bottom: 20px;
+    }
+    #summary th {
+      background-color: skyblue;
+      padding: 5px 12px;
+    }
+    #summary td {
+      background-color: lightblue;
+      text-align: center;
+      padding: 4px 8px;
+    }
+    .details {
+      width: 960px;
+      margin-bottom: 20px;
+    }
+    .details th {
+      background-color: skyblue;
+      padding: 5px 12px;
+    }
+    .details tr .passed {
+      background-color: lightgreen;
+    }
+    .details tr .failed {
+      background-color: red;
+    }
+    .details tr .unchecked {
+      background-color: gray;
+    }
+    .details td {
+      background-color: lightblue;
+      padding: 5px 12px;
+    }
+    .details .detail {
+      background-color: lightgrey;
+      font-size: smaller;
+      padding: 5px 10px;
+      line-height: 20px;
+      text-align: left;
+    }
+    .details .success {
+      background-color: greenyellow;
+    }
+    .details .error {
+      background-color: red;
+    }
+    .details .failure {
+      background-color: salmon;
+    }
+    .details .skipped {
+      background-color: gray;
+    }
+
+    .button {
+      font-size: 1em;
+      padding: 6px;
+      width: 4em;
+      text-align: center;
+      background-color: #06d85f;
+      border-radius: 20px/50px;
+      cursor: pointer;
+      transition: all 0.3s ease-out;
+    }
+    a.button{
+      color: gray;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .button:hover {
+      background: #2cffbd;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      transition: opacity 500ms;
+      visibility: hidden;
+      opacity: 0;
+      line-height: 25px;
+    }
+    .overlay:target {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .popup {
+      margin: 70px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      width: 50%;
+      position: relative;
+      transition: all 3s ease-in-out;
+    }
+
+    .popup h2 {
+      margin-top: 0;
+      color: #333;
+      font-family: Tahoma, Arial, sans-serif;
+    }
+    .popup .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      transition: all 200ms;
+      font-size: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #333;
+    }
+    .popup .close:hover {
+      color: #06d85f;
+    }
+    .popup .content {
+      max-height: 80%;
+      overflow: auto;
+      text-align: left;
+    }
+    .popup .separator {
+      color:royalblue
+    }
+
+    @media screen and (max-width: 700px) {
+      .box {
+        width: 70%;
+      }
+      .popup {
+        width: 70%;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>Test Report: </h1>
+
+  <h2>Summary</h2>
+  <table id="summary">
+    <tr>
+      <th>START AT</th>
+      <td colspan="4">2022-05-30 16:08:40</td>
+    </tr>
+    <tr>
+      <th>DURATION</th>
+      <td colspan="4">0.867 seconds</td>
+    </tr>
+    <tr>
+      <th>PLATFORM</th>
+      <td>HttpRunner 2.3.0 </td>
+      <td>CPython 3.7.1 </td>
+      <td colspan="2">Windows-10-10.0.18362-SP0</td>
+    </tr>
+    <tr>
+      <th>STAT</th>
+      <th colspan="2">TESTCASES (success/fail)</th>
+      <th colspan="2">TESTSTEPS (success/fail/error/skip)</th>
+    </tr>
+    <tr>
+      <td>total (details) =></td>
+      <td colspan="2">1 (1/0)</td>
+      <td colspan="2">4 (4/0/0/0)</td>
+    </tr>
+  </table>
+
+  <h2>Details</h2>
+
+  
+  
+  <h3>xpaas</h3>
+  <table id="suite_1" class="details">
+    <tr>
+      <td>TOTAL: 4</td>
+      <td>SUCCESS: 4</td>
+      <td>FAILED: 0</td>
+      <td>ERROR: 0</td>
+      <td>SKIPPED: 0</td>
+    </tr>
+    <tr>
+      <th>Status</th>
+      <th colspan="2">Name</th>
+      <th>Response Time</th>
+      <th>Detail</th>
+    </tr>
+
+    
+    
+    
+    <tr id="record_1_1">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">登录</td>
+      <td style="text-align:center;width:6em;">356.00 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_1_1">log-1</a>
+        <div id="popup_log_1_1_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_1_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: 登录</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://federation-openapi-gateway-zone-china.iot4-qa-group.rootcloudapp.com/account-manage/v1/auth/login
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>User-Agent</strong>: python-requests/2.25.1
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: */*
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Length</strong>: 134
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Type</strong>: application/json
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                          {&#34;client_id&#34;: &#34;web_app&#34;, &#34;client_secret&#34;: &#34;changeit&#34;, &#34;grant_type&#34;: &#34;password&#34;, &#34;password&#34;: &#34;1234567890aA&#34;, &#34;username&#34;: &#34;rc_tiangong&#34;}
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://federation-openapi-gateway-zone-china.iot4-qa-group.rootcloudapp.com/account-manage/v1/auth/login
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            OK
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>Date</strong>: Mon, 30 May 2022 08:08:41 GMT
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Type</strong>: application/json; charset=utf-8
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 1435
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: keep-alive
+                            </div>
+                            
+                            <div>
+                              <strong>Access-Control-Allow-Origin</strong>: *
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Encoding</strong>: gzip
+                            </div>
+                            
+                            <div>
+                              <strong>Request-Id</strong>: b79c14c0dfef11eca4de072b4203c233
+                            </div>
+                            
+                            <div>
+                              <strong>Vary</strong>: Origin, Accept-Encoding, Origin
+                            </div>
+                            
+                            <div>
+                              <strong>Via</strong>: kong/2.4.1
+                            </div>
+                            
+                            <div>
+                              <strong>X-Content-Type-Options</strong>: nosniff
+                            </div>
+                            
+                            <div>
+                              <strong>X-Download-Options</strong>: noopen
+                            </div>
+                            
+                            <div>
+                              <strong>X-Frame-Options</strong>: SAMEORIGIN
+                            </div>
+                            
+                            <div>
+                              <strong>X-Kong-Proxy-Latency</strong>: 0
+                            </div>
+                            
+                            <div>
+                              <strong>X-Kong-Upstream-Latency</strong>: 25
+                            </div>
+                            
+                            <div>
+                              <strong>X-Readtime</strong>: 23
+                            </div>
+                            
+                            <div>
+                              <strong>X-Xss-Protection</strong>: 1; mode=block
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json; charset=utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>json</th>
+                        <td>
+                          
+                              <pre>{&#39;access_token&#39;: &#39;eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJyY190aWFuZ29uZyIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwiaXNTeXN0ZW1BZG1pbiI6ZmFsc2UsImNsaWVudF9pZCI6IndlYl9hcHAiLCJzY29wZSI6W10sInVzZXIiOnsiaWQiOiI2MjI4NjAyNjlmZmIzZTAwNTAxNjkxOTEiLCJ1c2VybmFtZSI6InJjX3RpYW5nb25nIiwiZGlzcGxheU5hbWUiOiJyY190aWFuZ29uZyIsIm1ldGFkYXRhIjp7Im1pZ3JhdGlvbiI6ZmFsc2V9fSwidGVuYW50SWQiOiI2MWYyMDQxODNjMjBiNTAwNGZhYjUwYzkiLCJhY3RpdmVDb21wYW55Ijp7ImlkIjoiNjFmMjA0MTgzYzIwYjUwMDRmYWI1MGM5IiwiYWRtaW5zIjpbXSwic3RhdHVzIjoiUmVndWxhciIsImlzT3BlcmF0b3IiOnRydWUsIm5hbWUiOiJyY190aWFuZ29uZyIsIm1ldGFkYXRhIjp7Im1pZ3JhdGlvbiI6ZmFsc2V9LCJwZXJtaXNzaW9uVmVyc2lvbiI6InYyIn0sImFjdGl2ZU9yZ2FuaXphdGlvbiI6eyJpZCI6IjYxZjIwNDE4M2MyMGI1MDA0ZmFiNTBjOSIsImFkbWlucyI6W10sInN0YXR1cyI6IlJlZ3VsYXIiLCJpc09wZXJhdG9yIjp0cnVlLCJuYW1lIjoicmNfdGlhbmdvbmciLCJtZXRhZGF0YSI6eyJtaWdyYXRpb24iOmZhbHNlfSwicGVybWlzc2lvblZlcnNpb24iOiJ2MiJ9LCJjcmVhdGVkQXQiOiIyMDIyLTA1LTMwVDA4OjA4OjQxLjI0N1oiLCJpc0xvZ0FzIjpmYWxzZSwiYXBwSWQiOm51bGwsIm5vbmNlIjoiMjBkMTZkMTctMGRlYS00YjFmLWI3N2EtMDQxZjA4ZjYxYWNlIiwiZGF0YUNlbnRlcklkIjoibWFzdGVyIiwiem9uZUlkIjoiQ2hpbmEiLCJpc1N5c3RlbU9yZ2FuaXphdGlvbiI6ZmFsc2UsImFwcFZlcnNpb24iOiJ2MSIsImlzcyI6ImlvdDQtcWEtZ3JvdXAucm9vdGNsb3VkYXBwLmNvbSIsImlhdCI6MTY1Mzg5ODEyMSwiZXhwIjoxNjUzOTAxNzIxfQ.tUy-dkQF82s4X22Ijkbpv8WT-dxRqmXluKUWJeeUS9sOi9oLTz4MqyQVt2ntf7KdQoDc_BDzo-o4XbtXXH4ZwXGO9gTPBCliT5K1kz-zitVHgiDJgIqhH66RuKyypSAacBoe-dTzZQwuDrLZM7fh_BcTUpXtidQBA7FWlLYFCa4&#39;, &#39;token_type&#39;: &#39;Bearer&#39;, &#39;refresh_token&#39;: &#39;eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjIyODYwMjY5ZmZiM2UwMDUwMTY5MTkxIiwidXNlcm5hbWUiOiJyY190aWFuZ29uZyIsImRpc3BsYXlOYW1lIjoicmNfdGlhbmdvbmciLCJtZXRhZGF0YSI6eyJtaWdyYXRpb24iOmZhbHNlfX0sImNvbXBhbnlJZCI6Ii0xIiwiY2xpZW50X2lkIjoid2ViX2FwcCIsImNyZWF0ZWRBdCI6IjIwMjItMDUtMzBUMDg6MDg6NDEuMjQ0WiIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwiYXRpIjoiMDhjNDc3NGUtZGJjZC00NTUxLTgwYTItMTJkNGYyZTQwY2Y0IiwiYWN0aXZlQ29tcGFueSI6eyJpZCI6IjYxZjIwNDE4M2MyMGI1MDA0ZmFiNTBjOSIsImFkbWlucyI6W10sInN0YXR1cyI6IlJlZ3VsYXIiLCJpc09wZXJhdG9yIjp0cnVlLCJuYW1lIjoicmNfdGlhbmdvbmciLCJtZXRhZGF0YSI6eyJtaWdyYXRpb24iOmZhbHNlfSwicGVybWlzc2lvblZlcnNpb24iOiJ2MiJ9LCJhY3RpdmVPcmdhbml6YXRpb24iOnsiaWQiOiI2MWYyMDQxODNjMjBiNTAwNGZhYjUwYzkiLCJhZG1pbnMiOltdLCJzdGF0dXMiOiJSZWd1bGFyIiwiaXNPcGVyYXRvciI6dHJ1ZSwibmFtZSI6InJjX3RpYW5nb25nIiwibWV0YWRhdGEiOnsibWlncmF0aW9uIjpmYWxzZX0sInBlcm1pc3Npb25WZXJzaW9uIjoidjIifSwic2NvcGUiOltdLCJpc0xvZ0FzIjpmYWxzZSwiYXBwSWQiOm51bGwsIm5vbmNlIjoiMjBkMTZkMTctMGRlYS00YjFmLWI3N2EtMDQxZjA4ZjYxYWNlIiwiZGF0YUNlbnRlcklkIjoibWFzdGVyIiwiem9uZUlkIjoiQ2hpbmEiLCJpc1N5c3RlbU9yZ2FuaXphdGlvbiI6ZmFsc2UsImFwcFZlcnNpb24iOiJ2MSIsImlhdCI6MTY1Mzg5ODEyMSwiZXhwIjoxNjU1MTA3NzIxfQ.D83cv2ZyQ6vty4et9UEhbyiJc0W6YoyIC4jONOK4VRrIPrBH4-RhlrlL_ICzHG32swYBTWBYKrB0iKhEmFynTjfRFkfpcSiugDrt8_m1JrWHbLVffX0mTUPT0hH5e7bLSP0pbw3IGHBOqq554l-KYF-lcCH5fkdcNgLPo7TPr_c&#39;, &#39;expires_in&#39;: 3599}</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+              <div style="overflow: auto">
+                  <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>2864</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>356.0</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>327.005</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_1_2">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">登录</td>
+      <td style="text-align:center;width:6em;">105.01 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_2_1">log-1</a>
+        <div id="popup_log_1_2_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_2_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: 登录</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://federation-openapi-gateway-zone-china.iot4-qa-group.rootcloudapp.com/account-manage/v1/auth/login
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>User-Agent</strong>: python-requests/2.25.1
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: */*
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Length</strong>: 134
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Type</strong>: application/json
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                          {&#34;client_id&#34;: &#34;web_app&#34;, &#34;client_secret&#34;: &#34;changeit&#34;, &#34;grant_type&#34;: &#34;password&#34;, &#34;password&#34;: &#34;1234567890aA&#34;, &#34;username&#34;: &#34;rc_tiangong&#34;}
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://federation-openapi-gateway-zone-china.iot4-qa-group.rootcloudapp.com/account-manage/v1/auth/login
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            OK
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>Date</strong>: Mon, 30 May 2022 08:08:41 GMT
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Type</strong>: application/json; charset=utf-8
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 1433
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: keep-alive
+                            </div>
+                            
+                            <div>
+                              <strong>Access-Control-Allow-Origin</strong>: *
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Encoding</strong>: gzip
+                            </div>
+                            
+                            <div>
+                              <strong>Request-Id</strong>: b7af75b0dfef11eca4de072b4203c233
+                            </div>
+                            
+                            <div>
+                              <strong>Vary</strong>: Origin, Accept-Encoding, Origin
+                            </div>
+                            
+                            <div>
+                              <strong>Via</strong>: kong/2.4.1
+                            </div>
+                            
+                            <div>
+                              <strong>X-Content-Type-Options</strong>: nosniff
+                            </div>
+                            
+                            <div>
+                              <strong>X-Download-Options</strong>: noopen
+                            </div>
+                            
+                            <div>
+                              <strong>X-Frame-Options</strong>: SAMEORIGIN
+                            </div>
+                            
+                            <div>
+                              <strong>X-Kong-Proxy-Latency</strong>: 1
+                            </div>
+                            
+                            <div>
+                              <strong>X-Kong-Upstream-Latency</strong>: 19
+                            </div>
+                            
+                            <div>
+                              <strong>X-Readtime</strong>: 17
+                            </div>
+                            
+                            <div>
+                              <strong>X-Xss-Protection</strong>: 1; mode=block
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json; charset=utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>json</th>
+                        <td>
+                          
+                              <pre>{&#39;access_token&#39;: &#39;eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJyY190aWFuZ29uZyIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwiaXNTeXN0ZW1BZG1pbiI6ZmFsc2UsImNsaWVudF9pZCI6IndlYl9hcHAiLCJzY29wZSI6W10sInVzZXIiOnsiaWQiOiI2MjI4NjAyNjlmZmIzZTAwNTAxNjkxOTEiLCJ1c2VybmFtZSI6InJjX3RpYW5nb25nIiwiZGlzcGxheU5hbWUiOiJyY190aWFuZ29uZyIsIm1ldGFkYXRhIjp7Im1pZ3JhdGlvbiI6ZmFsc2V9fSwidGVuYW50SWQiOiI2MWYyMDQxODNjMjBiNTAwNGZhYjUwYzkiLCJhY3RpdmVDb21wYW55Ijp7ImlkIjoiNjFmMjA0MTgzYzIwYjUwMDRmYWI1MGM5IiwiYWRtaW5zIjpbXSwic3RhdHVzIjoiUmVndWxhciIsImlzT3BlcmF0b3IiOnRydWUsIm5hbWUiOiJyY190aWFuZ29uZyIsIm1ldGFkYXRhIjp7Im1pZ3JhdGlvbiI6ZmFsc2V9LCJwZXJtaXNzaW9uVmVyc2lvbiI6InYyIn0sImFjdGl2ZU9yZ2FuaXphdGlvbiI6eyJpZCI6IjYxZjIwNDE4M2MyMGI1MDA0ZmFiNTBjOSIsImFkbWlucyI6W10sInN0YXR1cyI6IlJlZ3VsYXIiLCJpc09wZXJhdG9yIjp0cnVlLCJuYW1lIjoicmNfdGlhbmdvbmciLCJtZXRhZGF0YSI6eyJtaWdyYXRpb24iOmZhbHNlfSwicGVybWlzc2lvblZlcnNpb24iOiJ2MiJ9LCJjcmVhdGVkQXQiOiIyMDIyLTA1LTMwVDA4OjA4OjQxLjM3MVoiLCJpc0xvZ0FzIjpmYWxzZSwiYXBwSWQiOm51bGwsIm5vbmNlIjoiYTUyNGU2M2QtNmExMy00M2JhLWExNjItOGNmYjYwNmJkOWZhIiwiZGF0YUNlbnRlcklkIjoibWFzdGVyIiwiem9uZUlkIjoiQ2hpbmEiLCJpc1N5c3RlbU9yZ2FuaXphdGlvbiI6ZmFsc2UsImFwcFZlcnNpb24iOiJ2MSIsImlzcyI6ImlvdDQtcWEtZ3JvdXAucm9vdGNsb3VkYXBwLmNvbSIsImlhdCI6MTY1Mzg5ODEyMSwiZXhwIjoxNjUzOTAxNzIxfQ.TA6N1XbC2xec468GWNvSbGohoR2AITBE5g0FYTsVaAMRIjC6FFgv0AGf94JYl9hVecQ_TnJsZR4UhUrCjP7MpDGO4Bfc6x2aLzw3jYUHk7LIxYhUaV8TWZJ-L9Qn4xCzV5R2o6fUcXHwYSYTocXeTN-FWhm8RC6zf2kO853q8mI&#39;, &#39;token_type&#39;: &#39;Bearer&#39;, &#39;refresh_token&#39;: &#39;eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjIyODYwMjY5ZmZiM2UwMDUwMTY5MTkxIiwidXNlcm5hbWUiOiJyY190aWFuZ29uZyIsImRpc3BsYXlOYW1lIjoicmNfdGlhbmdvbmciLCJtZXRhZGF0YSI6eyJtaWdyYXRpb24iOmZhbHNlfX0sImNvbXBhbnlJZCI6Ii0xIiwiY2xpZW50X2lkIjoid2ViX2FwcCIsImNyZWF0ZWRBdCI6IjIwMjItMDUtMzBUMDg6MDg6NDEuMzY5WiIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwiYXRpIjoiMGU4MTk5NmItYjVjZC00MWI5LTkyMWEtM2E5ZGZjMzBkZGMzIiwiYWN0aXZlQ29tcGFueSI6eyJpZCI6IjYxZjIwNDE4M2MyMGI1MDA0ZmFiNTBjOSIsImFkbWlucyI6W10sInN0YXR1cyI6IlJlZ3VsYXIiLCJpc09wZXJhdG9yIjp0cnVlLCJuYW1lIjoicmNfdGlhbmdvbmciLCJtZXRhZGF0YSI6eyJtaWdyYXRpb24iOmZhbHNlfSwicGVybWlzc2lvblZlcnNpb24iOiJ2MiJ9LCJhY3RpdmVPcmdhbml6YXRpb24iOnsiaWQiOiI2MWYyMDQxODNjMjBiNTAwNGZhYjUwYzkiLCJhZG1pbnMiOltdLCJzdGF0dXMiOiJSZWd1bGFyIiwiaXNPcGVyYXRvciI6dHJ1ZSwibmFtZSI6InJjX3RpYW5nb25nIiwibWV0YWRhdGEiOnsibWlncmF0aW9uIjpmYWxzZX0sInBlcm1pc3Npb25WZXJzaW9uIjoidjIifSwic2NvcGUiOltdLCJpc0xvZ0FzIjpmYWxzZSwiYXBwSWQiOm51bGwsIm5vbmNlIjoiYTUyNGU2M2QtNmExMy00M2JhLWExNjItOGNmYjYwNmJkOWZhIiwiZGF0YUNlbnRlcklkIjoibWFzdGVyIiwiem9uZUlkIjoiQ2hpbmEiLCJpc1N5c3RlbU9yZ2FuaXphdGlvbiI6ZmFsc2UsImFwcFZlcnNpb24iOiJ2MSIsImlhdCI6MTY1Mzg5ODEyMSwiZXhwIjoxNjU1MTA3NzIxfQ.W0n3YOOALq3QHcXpODkjpR3XkGHoyeJxOJmGrK2vScGcXdgdHM5fmQ_ulXouk-Uw8pdOH-kPPAgCs_prmKBCrlBtpy_PnDJPrQCazPmZJAp-j1bCzcEeN5p-g4T16lIhI-3b8jZTD7zKAVz3QjaG0tm7qlme_1Y1YW8vB03AYlA&#39;, &#39;expires_in&#39;: 3599}</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+              <div style="overflow: auto">
+                  <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>2864</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>105.01</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>99.64</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_1_3">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">创建应用</td>
+      <td style="text-align:center;width:6em;">267.01 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_3_1">log-1</a>
+        <div id="popup_log_1_3_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_3_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: 创建应用</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://xpaas-app-service.iot4-qa.rootcloudapp.com/v1/app/design
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>User-Agent</strong>: python-requests/2.25.1
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: */*
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                          <div>
+                            <strong>access_token</strong>: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJyY190aWFuZ29uZyIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwiaXNTeXN0ZW1BZG1pbiI6ZmFsc2UsImNsaWVudF9pZCI6IndlYl9hcHAiLCJzY29wZSI6W10sInVzZXIiOnsiaWQiOiI2MjI4NjAyNjlmZmIzZTAwNTAxNjkxOTEiLCJ1c2VybmFtZSI6InJjX3RpYW5nb25nIiwiZGlzcGxheU5hbWUiOiJyY190aWFuZ29uZyIsIm1ldGFkYXRhIjp7Im1pZ3JhdGlvbiI6ZmFsc2V9fSwidGVuYW50SWQiOiI2MWYyMDQxODNjMjBiNTAwNGZhYjUwYzkiLCJhY3RpdmVDb21wYW55Ijp7ImlkIjoiNjFmMjA0MTgzYzIwYjUwMDRmYWI1MGM5IiwiYWRtaW5zIjpbXSwic3RhdHVzIjoiUmVndWxhciIsImlzT3BlcmF0b3IiOnRydWUsIm5hbWUiOiJyY190aWFuZ29uZyIsIm1ldGFkYXRhIjp7Im1pZ3JhdGlvbiI6ZmFsc2V9LCJwZXJtaXNzaW9uVmVyc2lvbiI6InYyIn0sImFjdGl2ZU9yZ2FuaXphdGlvbiI6eyJpZCI6IjYxZjIwNDE4M2MyMGI1MDA0ZmFiNTBjOSIsImFkbWlucyI6W10sInN0YXR1cyI6IlJlZ3VsYXIiLCJpc09wZXJhdG9yIjp0cnVlLCJuYW1lIjoicmNfdGlhbmdvbmciLCJtZXRhZGF0YSI6eyJtaWdyYXRpb24iOmZhbHNlfSwicGVybWlzc2lvblZlcnNpb24iOiJ2MiJ9LCJjcmVhdGVkQXQiOiIyMDIyLTA1LTMwVDA4OjA4OjQxLjM3MVoiLCJpc0xvZ0FzIjpmYWxzZSwiYXBwSWQiOm51bGwsIm5vbmNlIjoiYTUyNGU2M2QtNmExMy00M2JhLWExNjItOGNmYjYwNmJkOWZhIiwiZGF0YUNlbnRlcklkIjoibWFzdGVyIiwiem9uZUlkIjoiQ2hpbmEiLCJpc1N5c3RlbU9yZ2FuaXphdGlvbiI6ZmFsc2UsImFwcFZlcnNpb24iOiJ2MSIsImlzcyI6ImlvdDQtcWEtZ3JvdXAucm9vdGNsb3VkYXBwLmNvbSIsImlhdCI6MTY1Mzg5ODEyMSwiZXhwIjoxNjUzOTAxNzIxfQ.TA6N1XbC2xec468GWNvSbGohoR2AITBE5g0FYTsVaAMRIjC6FFgv0AGf94JYl9hVecQ_TnJsZR4UhUrCjP7MpDGO4Bfc6x2aLzw3jYUHk7LIxYhUaV8TWZJ-L9Qn4xCzV5R2o6fUcXHwYSYTocXeTN-FWhm8RC6zf2kO853q8mI
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Length</strong>: 137
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Type</strong>: application/json
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                          {&#34;desc&#34;: &#34;&#34;, &#34;descI18n&#34;: &#34;&#34;, &#34;iconUrl&#34;: &#34;&#34;, &#34;name&#34;: &#34;gjghgh&#34;, &#34;nameI18n&#34;: &#34;&#34;, &#34;schemaType&#34;: &#34;APP&#34;, &#34;schemaVersion&#34;: &#34;&#34;, &#34;templateId&#34;: &#34;&#34;}
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://xpaas-app-service.iot4-qa.rootcloudapp.com/v1/app/design
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>Date</strong>: Mon, 30 May 2022 08:08:41 GMT
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Type</strong>: application/json
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 59
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: keep-alive
+                            </div>
+                            
+                            <div>
+                              <strong>Access-Control-Allow-Origin</strong>: *
+                            </div>
+                            
+                            <div>
+                              <strong>Access-Control-Allow-Credentials</strong>: true
+                            </div>
+                            
+                            <div>
+                              <strong>Access-Control-Allow-Methods</strong>: POST,GET,OPTIONS,PUT,DELETE,PATCH,HEAD
+                            </div>
+                            
+                            <div>
+                              <strong>Access-Control-Allow-Max-Age</strong>: 3600
+                            </div>
+                            
+                            <div>
+                              <strong>Access-Control-Allow-Headers</strong>: *
+                            </div>
+                            
+                            <div>
+                              <strong>Access-Control-Expose-Headers</strong>: *
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>json</th>
+                        <td>
+                          
+                              <pre>{&#39;code&#39;: 0, &#39;message&#39;: None, &#39;data&#39;: &#39;app_wL8HnpwE&#39;, &#39;args&#39;: None}</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+              <div style="overflow: auto">
+                  <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        content.code
+                      </td>
+                      <td>equals</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>59</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>267.01</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>261.734</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_1_4">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">创建应用2</td>
+      <td style="text-align:center;width:6em;">97.00 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_4_1">log-1</a>
+        <div id="popup_log_1_4_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_4_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: 创建应用2</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://xpaas-app-service.iot4-qa.rootcloudapp.com/v1/app/design
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>User-Agent</strong>: python-requests/2.25.1
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: */*
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                          <div>
+                            <strong>access_token</strong>: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiJyY190aWFuZ29uZyIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iLCJST0xFX1VTRVIiXSwiaXNTeXN0ZW1BZG1pbiI6ZmFsc2UsImNsaWVudF9pZCI6IndlYl9hcHAiLCJzY29wZSI6W10sInVzZXIiOnsiaWQiOiI2MjI4NjAyNjlmZmIzZTAwNTAxNjkxOTEiLCJ1c2VybmFtZSI6InJjX3RpYW5nb25nIiwiZGlzcGxheU5hbWUiOiJyY190aWFuZ29uZyIsIm1ldGFkYXRhIjp7Im1pZ3JhdGlvbiI6ZmFsc2V9fSwidGVuYW50SWQiOiI2MWYyMDQxODNjMjBiNTAwNGZhYjUwYzkiLCJhY3RpdmVDb21wYW55Ijp7ImlkIjoiNjFmMjA0MTgzYzIwYjUwMDRmYWI1MGM5IiwiYWRtaW5zIjpbXSwic3RhdHVzIjoiUmVndWxhciIsImlzT3BlcmF0b3IiOnRydWUsIm5hbWUiOiJyY190aWFuZ29uZyIsIm1ldGFkYXRhIjp7Im1pZ3JhdGlvbiI6ZmFsc2V9LCJwZXJtaXNzaW9uVmVyc2lvbiI6InYyIn0sImFjdGl2ZU9yZ2FuaXphdGlvbiI6eyJpZCI6IjYxZjIwNDE4M2MyMGI1MDA0ZmFiNTBjOSIsImFkbWlucyI6W10sInN0YXR1cyI6IlJlZ3VsYXIiLCJpc09wZXJhdG9yIjp0cnVlLCJuYW1lIjoicmNfdGlhbmdvbmciLCJtZXRhZGF0YSI6eyJtaWdyYXRpb24iOmZhbHNlfSwicGVybWlzc2lvblZlcnNpb24iOiJ2MiJ9LCJjcmVhdGVkQXQiOiIyMDIyLTA1LTMwVDA4OjA4OjQxLjM3MVoiLCJpc0xvZ0FzIjpmYWxzZSwiYXBwSWQiOm51bGwsIm5vbmNlIjoiYTUyNGU2M2QtNmExMy00M2JhLWExNjItOGNmYjYwNmJkOWZhIiwiZGF0YUNlbnRlcklkIjoibWFzdGVyIiwiem9uZUlkIjoiQ2hpbmEiLCJpc1N5c3RlbU9yZ2FuaXphdGlvbiI6ZmFsc2UsImFwcFZlcnNpb24iOiJ2MSIsImlzcyI6ImlvdDQtcWEtZ3JvdXAucm9vdGNsb3VkYXBwLmNvbSIsImlhdCI6MTY1Mzg5ODEyMSwiZXhwIjoxNjUzOTAxNzIxfQ.TA6N1XbC2xec468GWNvSbGohoR2AITBE5g0FYTsVaAMRIjC6FFgv0AGf94JYl9hVecQ_TnJsZR4UhUrCjP7MpDGO4Bfc6x2aLzw3jYUHk7LIxYhUaV8TWZJ-L9Qn4xCzV5R2o6fUcXHwYSYTocXeTN-FWhm8RC6zf2kO853q8mI
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Length</strong>: 135
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Type</strong>: application/json
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                          {&#34;desc&#34;: &#34;&#34;, &#34;descI18n&#34;: &#34;&#34;, &#34;iconUrl&#34;: &#34;&#34;, &#34;name&#34;: &#34;kkkk&#34;, &#34;nameI18n&#34;: &#34;&#34;, &#34;schemaType&#34;: &#34;APP&#34;, &#34;schemaVersion&#34;: &#34;&#34;, &#34;templateId&#34;: &#34;&#34;}
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://xpaas-app-service.iot4-qa.rootcloudapp.com/v1/app/design
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>Date</strong>: Mon, 30 May 2022 08:08:41 GMT
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Type</strong>: application/json
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 59
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: keep-alive
+                            </div>
+                            
+                            <div>
+                              <strong>Access-Control-Allow-Origin</strong>: *
+                            </div>
+                            
+                            <div>
+                              <strong>Access-Control-Allow-Credentials</strong>: true
+                            </div>
+                            
+                            <div>
+                              <strong>Access-Control-Allow-Methods</strong>: POST,GET,OPTIONS,PUT,DELETE,PATCH,HEAD
+                            </div>
+                            
+                            <div>
+                              <strong>Access-Control-Allow-Max-Age</strong>: 3600
+                            </div>
+                            
+                            <div>
+                              <strong>Access-Control-Allow-Headers</strong>: *
+                            </div>
+                            
+                            <div>
+                              <strong>Access-Control-Expose-Headers</strong>: *
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            application/json
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>json</th>
+                        <td>
+                          
+                              <pre>{&#39;code&#39;: 0, &#39;message&#39;: None, &#39;data&#39;: &#39;app_oEXBJaKu&#39;, &#39;args&#39;: None}</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+              <div style="overflow: auto">
+                  <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        content.code
+                      </td>
+                      <td>equals</td>
+                      <td>0</td>
+                      <td>0</td>
+                    </tr>
+                    
+                  </table>
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>59</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>97.0</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>92.445</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+  </table>
+  
+</body>

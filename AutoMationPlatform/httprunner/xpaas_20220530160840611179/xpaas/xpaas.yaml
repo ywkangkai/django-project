@@ -1,0 +1,86 @@
+- config:
+    base_url: http://xpaas-app-service.iot4-qa.rootcloudapp.com
+    name: xpaas
+    request: {}
+- test:
+    extract:
+    - access_token: content.access_token
+    name: 登录
+    request:
+      json:
+        client_id: web_app
+        client_secret: changeit
+        grant_type: password
+        password: 1234567890aA
+        username: rc_tiangong
+      method: POST
+      url: http://federation-openapi-gateway-zone-china.iot4-qa-group.rootcloudapp.com/account-manage/v1/auth/login
+    validate:
+    - check: status_code
+      comparator: equals
+      expect: 200
+- config:
+    base_url: http://xpaas-app-service.iot4-qa.rootcloudapp.com
+    name: xpaas
+    request: {}
+- test:
+    extract:
+    - access_token: content.access_token
+    name: 登录
+    request:
+      json:
+        client_id: web_app
+        client_secret: changeit
+        grant_type: password
+        password: 1234567890aA
+        username: rc_tiangong
+      method: POST
+      url: http://federation-openapi-gateway-zone-china.iot4-qa-group.rootcloudapp.com/account-manage/v1/auth/login
+    validate:
+    - check: status_code
+      comparator: equals
+      expect: 200
+- test:
+    name: 创建应用
+    request:
+      headers:
+        access_token: $access_token
+      json:
+        desc: ''
+        descI18n: ''
+        iconUrl: ''
+        name: gjghgh
+        nameI18n: ''
+        schemaType: APP
+        schemaVersion: ''
+        templateId: ''
+      method: POST
+      url: /v1/app/design
+    validate:
+    - check: content.code
+      comparator: equals
+      expect: 0
+- config:
+    base_url: http://xpaas-app-service.iot4-qa.rootcloudapp.com
+    name: xpaas
+    request: {}
+- test:
+    name: 创建应用2
+    request:
+      headers:
+        access_token: $access_token
+      json:
+        desc: ''
+        descI18n: ''
+        iconUrl: ''
+        name: kkkk
+        nameI18n: ''
+        schemaType: APP
+        schemaVersion: ''
+        templateId: ''
+      method: POST
+      url: /v1/app/design
+    validate:
+    - check: content.code
+      comparator: equals
+      expect: 0
