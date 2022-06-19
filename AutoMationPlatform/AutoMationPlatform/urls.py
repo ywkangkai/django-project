@@ -30,6 +30,7 @@ urlpatterns = [
     path('summary/', include('summary.urls')),
     path('report/', include('reports.urls')),
     path('repository/', include('repository.urls')),
+    path('harbor/', include('harbor.urls')),
 
 
 

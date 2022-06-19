@@ -51,7 +51,8 @@ INSTALLED_APPS = [
     'summary',
     'reports',
     'repository',
-    'gitstatus'
+    'gitstatus',
+    'harbor'
 
 ]
 
@@ -105,7 +106,7 @@ DATABASES = {
         'NAME': 'platform',
         'HOST': '192.168.59.130',
         #'HOST': 'db',
-        'PORT': 3306,
+        'PORT': 3337,
         'USER': 'root',
         'PASSWORD': '123456'
     }

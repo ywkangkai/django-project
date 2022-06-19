@@ -130,7 +130,7 @@ class searchRepository(GenericAPIView):
             serializer_obj = RepositoryModelSerializer(instance=Data, many=True)
         return Response({"code": 0, "results": serializer_obj.data})
 
-
+#第一步拉取代码到服务器
 class Git(GenericAPIView):
 
     def post(self, request):
@@ -143,7 +143,7 @@ class Git(GenericAPIView):
             client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
             client.connect(server_address, 22, username='root', password='P:!6vmr^AgE4W', timeout=4)
             try:
-                stdin, stdout, stderr = client.exec_command('cd /data/; mkdir myproject; cd myproject; git clone http://gitlab.irootech.com/rootcloud-platform/3-xpaas/rootcloud-apaas/xpaas-app-service.git', get_pty=True)
+                stdin, stdout, stderr = client.exec_command(f'cd /data/; mkdir myproject; cd myproject; git clone {git}', get_pty=True)
                 time.sleep(10)
                 while True:
                     result = stdout.readline()
@@ -162,7 +162,6 @@ class Git(GenericAPIView):
                         return Response(data)
 
                     elif 'already exists and is not an empty directory' in result:
-                        print('进入仓库判断')
                         data = {
                             'code': 0,
                             "message": '代码拉去失败，请检查文件夹是否为空，或者已存在'
