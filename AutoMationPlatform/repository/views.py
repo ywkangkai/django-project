@@ -2,6 +2,7 @@ import json
 import re
 import time
 import paramiko
+from harbor.models import Harbor
 from django.http import JsonResponse
 from rest_framework.generics import GenericAPIView
 from .models import Repository
@@ -141,68 +142,68 @@ class Git(GenericAPIView):
         try:
             client = paramiko.SSHClient()
             client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-            client.connect(server_address, 22, username='root', password='P:!6vmr^AgE4W', timeout=4)
+            client.connect(server_address, 22, username='root', password='ywkangkai@1314', timeout=4)
             try:
                 stdin, stdout, stderr = client.exec_command(f'cd /data/; mkdir myproject; cd myproject; git clone {git}', get_pty=True)
-                time.sleep(10)
-                while True:
-                    result = stdout.readline()
-                    filename = re.findall('mkdir: cannot create directory ‘(.+?)’: File exists', result)
-                    if 'mkdir: cannot create directory ‘myproject’: File exists' in result:
-                        data = {
-                            'code': 0,
-                            "message": f'文件夹{filename[0]}已存在'
-                        }
-                        form = {
-                            'git': '已完成',
-                            'git_status1': 'error',
-                            'git_description': f'文件夹{filename[0]}已存在'
-                        }
-                        GitStatus.objects.filter(respository=obj).update(**form)
-                        return Response(data)
+                result = stdout.read().decode()
+                print(result)
+                time.sleep(5)
 
-                    elif 'already exists and is not an empty directory' in result:
-                        data = {
-                            'code': 0,
-                            "message": '代码拉去失败，请检查文件夹是否为空，或者已存在'
-                        }
-                        form = {
-                            'git': '已完成',
-                            'git_status1': 'error',
-                            'git_description': '代码拉去失败，请检查文件夹是否为空，或者已存在'
-                        }
-                        GitStatus.objects.filter(respository=obj).update(**form)
-                        return Response(data)
+                filename = re.findall('mkdir: cannot create directory ‘(.+?)’: File exists', result)
+                if 'mkdir: cannot create directory ‘myproject’: File exists' in result:
+                    data = {
+                        'code': 0,
+                        "message": f'文件夹{filename[0]}已存在'
+                    }
+                    form = {
+                        'git': '已完成',
+                        'git_status1': 'error',
+                        'git_description': f'文件夹{filename[0]}已存在'
+                    }
+                    client.exec_command('cd /data; rm -rf myproject')
+                    GitStatus.objects.filter(respository=obj).update(**form)
+                    return Response(data)
 
-                    elif 'Cloning into' in result:
-                        data = {
-                            'code': 0,
-                            "message": '项目拉取完成'
-                        }
-                        form = {
-                            'git': '已完成',
-                            'git_status1': 'success',
-                            'git_description': '项目拉取完成'
-                        }
-                        GitStatus.objects.filter(respository=obj).update(**form)
-                        return Response(data)
-                    else:
-                        data = {
-                            'code': 1,
-                            'message': '项目拉取失败'
-                        }
-                        form = {
-                            'git': '已完成',
-                            'git_status1': 'error',
-                            'git_description': '项目拉取失败'
-                        }
-                        GitStatus.objects.filter(respository=obj).update(**form)
-                        return Response(data)
+                elif 'already exists and is not an empty directory' in result:
+                    data = {
+                        'code': 0,
+                        "message": '代码拉去失败，请检查文件夹是否为空，或者已存在'
+                    }
+                    form = {
+                        'git': '已完成',
+                        'git_status1': 'error',
+                        'git_description': '代码拉去失败，请检查文件夹是否为空，或者已存在'
+                    }
+                    client.exec_command('cd /data; rm -rf myproject')
+                    GitStatus.objects.filter(respository=obj).update(**form)
+                    return Response(data)
+
+                elif 'Cloning into' in result:
+                    data = {
+                        'code': 0,
+                        "message": '项目拉取完成'
+                    }
+                    form = {
+                        'git': '已完成',
+                        'git_status1': 'success',
+                        'git_description': '项目拉取完成'
+                    }
+                    GitStatus.objects.filter(respository=obj).update(**form)
+                    return Response(data)
+                else:
+                    data = {
+                        'code': 1,
+                        'message': '项目拉取失败'
+                    }
+                    form = {
+                        'git': '已完成',
+                        'git_status1': 'error',
+                        'git_description': '项目拉取失败'
+                    }
+                    client.exec_command('cd /data; rm -rf myproject')
+                    GitStatus.objects.filter(respository=obj).update(**form)
+                    return Response(data)
             except:
-                data = {
-                    'code': 1,
-                    'message': '项目拉取失败'
-                }
                 data = {
                     'code': 1,
                     'message': '项目拉取失败'
@@ -212,6 +213,7 @@ class Git(GenericAPIView):
                     'git_status1': 'error',
                     'git_description': '项目拉取失败'
                 }
+                client.exec_command('cd /data; rm -rf myproject')
                 GitStatus.objects.filter(respository=obj).update(**form)
                 return Response(data)
 
@@ -220,15 +222,12 @@ class Git(GenericAPIView):
                 'code': 1,
                 'message': '服务器链接失败'
             }
-            data = {
-                'code': 1,
-                'message': '项目拉取失败'
-            }
             form = {
                 'git': '已完成',
                 'git_status1': 'error',
                 'git_description': '服务器链接失败'
             }
+            client.exec_command('cd /data; rm -rf myproject')
             GitStatus.objects.filter(respository=obj).update(**form)
             return Response(data)
         finally:
@@ -238,6 +237,7 @@ class Git(GenericAPIView):
 class Compile(GenericAPIView):
 
     def post(self, request):
+        global images
         command = ''
         id = request.data['id']
         obj = Repository.objects.get(id=id)
@@ -252,31 +252,55 @@ class Compile(GenericAPIView):
         try:
             client = paramiko.SSHClient()
             client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-            client.connect(server_address, 22, username='root', password='P:!6vmr^AgE4W', timeout=4)
+            client.connect(server_address, 22, username='root', password='ywkangkai@1314', timeout=4)
             try:
                 stdin, stdout, stderr = client.exec_command(command, get_pty=True)
                 content = stdout.read().decode()
                 print(content)
-                data = {
-                    'code': 0,
-                    "message": '构建前步骤执行完成'
-                }
-                form = {
-                    'build_before': '已完成',
-                    'build_before_status2': 'success',
-                    'build_before_description': '构建前步骤执行成功'
-                }
-                GitStatus.objects.filter(respository=obj).update(**form)
-                return Response(data)
+                if 'Successfully' in content:
+                    images = re.findall('Successfully tagged (.*)?', content)
+                    data = {
+                        'code': 0,
+                        "message": '镜像构建成功'
+                    }
+                    form = {
+                        'build_before': '已完成',
+                        'build_before_status2': 'success',
+                        'build_before_description': '镜像构建成功'
+                    }
+                    # stdin, stdout, stderr = client.exec_command("docker images |awk 'NR==2' |awk '{print $1}'", get_pty=True)
+                    # name = stdout.read().decode().strip()
+                    # stdin, stdout, stderr = client.exec_command("docker images |awk 'NR==2' |awk '{print $2}'", get_pty=True)
+                    # tag = stdout.read().decode().strip()
+                    harbor_data = {
+                        'name': images[0].replace("\r", ""),
+                        'repository_id': id
+                    }
+                    Harbor.objects.create(**harbor_data)
+                    GitStatus.objects.filter(respository=obj).update(**form)
+                    return Response(data)
+                elif 'unable to prepare context:' in content:
+                    data = {
+                        'code': 0,
+                        "message": '缺少dockerfile文件'
+                    }
+                    form = {
+                        'build_before': '已完成',
+                        'build_before_status2': 'error',
+                        'build_before_description': '缺少dockerfile文件'
+                    }
+                    client.exec_command('cd /data; rm -rf myproject')
+                    GitStatus.objects.filter(respository=obj).update(**form)
+                    return Response(data)
             except:
                 data = {
                     'code': 1,
-                    'message': '构建前步骤失败'
+                    'message': '镜像构建失败'
                 }
                 form = {
                     'build_before': '已完成',
                     'build_before_status2': 'error',
-                    'build_before_description': '构建前步骤执行失败'
+                    'build_before_description': '镜像构建失败'
                 }
                 GitStatus.objects.filter(respository=obj).update(**form)
                 return Response(data)
@@ -295,6 +319,67 @@ class Compile(GenericAPIView):
             return Response(data)
         finally:
             client.close()
+
+
+class buildAftet(GenericAPIView):
+    def post(self, request):
+        command = ''
+        id = request.data['id']
+        obj = Repository.objects.get(id=id)
+        server_address = obj.server
+        build = obj.build
+        build = json.loads(build)
+        setup = build['teardown']
+        setup = setup.split('\n')
+        for i in setup:
+            if '#编写shell，一条命令占一行，以分号结尾' not in i:
+                command = command + i
+        try:
+            client = paramiko.SSHClient()
+            client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+            client.connect(server_address, 22, username='root', password='ywkangkai@1314', timeout=4)
+            try:
+                stdin, stdout, stderr = client.exec_command(command, get_pty=True)
+                content = stdout.read().decode()
+                print(content)
+                data = {
+                    'code': 0,
+                    'message': '构建后步骤执行成功'
+                }
+                form = {
+                    'build_after': '已完成',
+                    'build_after_status4': 'success',
+                    'build_after_description': '构建后步骤执行成功'
+                }
+                GitStatus.objects.filter(respository=obj).update(**form)
+                return Response(data)
+            except:
+                data = {
+                    'code': 1,
+                    'message': '构建后步骤执行失败'
+                }
+                form = {
+                    'build_after': '已完成',
+                    'build_after_status4': 'error',
+                    'build_after_description': '构建后步骤执行失败'
+                }
+                GitStatus.objects.filter(respository=obj).update(**form)
+                return Response(data)
+        except:
+            data = {
+                'code': 1,
+                'message': '服务器链接失败'
+            }
+            form = {
+                'build_after': '已完成',
+                'build_after_status4': 'error',
+                'build_after_description': '服务器链接失败'
+            }
+            GitStatus.objects.filter(respository=obj).update(**form)
+            return Response(data)
+
+
+
 
 
 class add(GenericAPIView):

@@ -20,5 +20,6 @@ urlpatterns = [
     path('git/', views.Git.as_view()),
     path('compile/', views.Compile.as_view()),
     path('tianjia/', views.add.as_view()),
+    path('after/', views.buildAftet.as_view()),
 
 ]

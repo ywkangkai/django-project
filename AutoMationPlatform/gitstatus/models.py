@@ -14,7 +14,9 @@ class GitStatus(models.Model):
     build_after_status4 = models.CharField(max_length=500, default='wait')
 
     git_description = models.CharField(max_length=500, default='拉取代码')
-    build_before_description = models.CharField(max_length=500, default='构建前步骤')
-    structure_description = models.CharField(max_length=500, default='构建镜像')
+    build_before_description = models.CharField(max_length=500, default='构建镜像')
+    structure_description = models.CharField(max_length=500, default='推送镜像到镜像仓库')
     build_after_description = models.CharField(max_length=500, default='构建后步骤')
+
+
     respository = models.ForeignKey('repository.Repository', on_delete=models.CASCADE)
